@@ -5,13 +5,10 @@
  */
 package edu.ap.extraoefening1;
 
-import java.awt.event.ActionListener;
 import java.time.Duration;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -422,17 +419,7 @@ public class Gui extends javax.swing.JFrame {
             collectie.addBestand(bestand);
             updateLijst();
         } catch (java.lang.NumberFormatException ex) {
-            jDialogMessage.setTitle("Fout!");
-            JPanel panel = new JPanel();
-            JButton jButton = new JButton("Ok");
-            jButton.addActionListener((java.awt.event.ActionEvent evt1) -> {
-                jDialogMessage.setVisible(false);
-            });
-            panel.add(new JLabel("Geef nummer in"));
-            panel.add(jButton);
-            jDialogMessage.setContentPane(panel);
-            jDialogMessage.setSize(200, 200);
-            jDialogMessage.setVisible(true);
+            JOptionPane.showConfirmDialog(this, "Geef een getal in", "Fout!", 2);
         }
 
     }//GEN-LAST:event_jButtonToevoegenActionPerformed
